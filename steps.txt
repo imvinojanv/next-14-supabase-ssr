@@ -14,4 +14,12 @@
 
 ### Supabase database setup
 -   Create a table 
--   
+-   Update the createTodo fuction to insert todo (`../todo/actions/index.ts`)
+-   Use the createTodo function in CreateForm page
+-   Update the readTodo function and use it on `../todo/page.tsx`
+-   Update in real-time using cached data
+-   Update the deleteTodoById and updateTodoById functions as well the same way,
+-   And add real-time update using cached data to both this function
+-   Wrap the Button component with <form> element
+-   Call those deleteTodoById and updateTodoById functions and bind the id then passing to the Button components
+-   CRUD functions are working properly with real-time update

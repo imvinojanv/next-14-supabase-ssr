@@ -5,16 +5,11 @@ import { cn } from "@/lib/utils";
 import readUserSession from "@/lib/actions";
 import CreateForm from "./components/CreateForm";
 import { Button } from "@/components/ui/button";
+import { deleteTodoById, readTodo, updateTodoById } from "./actions";
 
 export default async function Page() {
-	const todos = [
-		{
-			title: "Subscribe",
-			created_by: "091832901830",
-			id: "101981908",
-			completed: false,
-		},
-	];
+
+	const { data: todos } = await readTodo();
 
 	// const { data } = await readUserSession();
 
@@ -28,6 +23,9 @@ export default async function Page() {
 				<CreateForm />
 
 				{todos?.map((todo, index) => {
+					const deleteTodo = deleteTodoById.bind(null, todo.id);
+					const updateTodo = updateTodoById.bind(null, todo.id, !todo.completed);
+
 					return (
 						<div key={index} className="flex items-center gap-6">
 							<h1
@@ -38,8 +36,12 @@ export default async function Page() {
 								{todo.title}
 							</h1>
 
-							<Button>delete</Button>
-							<Button>Update</Button>
+							<form action={deleteTodo}>
+								<Button>delete</Button>
+							</form>
+							<form action={updateTodo}>
+								<Button>Update</Button>
+							</form>
 						</div>
 					);
 				})}
