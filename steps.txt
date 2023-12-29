@@ -1,0 +1,17 @@
+-- Starter Code: https://github.com/Chensokheng/next-14-supabase-ssr 
+-- Create a client : https://supabase.com/docs/guides/auth/server-side/creating-a-client
+-- 
+
+### Register
+-   Create server.ts file in `/lib/supabase`
+-   Setup supabase client
+-   Update auth action `../auth-server-action/actions/index.ts`
+-   Update the onSubmit function for signUpWithEmailAndPassword
+-   Create a action fuction to read the session from the user (`lib/actions/index.ts`)
+-   Update the auth page with call the readUserSession function (`../auth-server-action/page.tsx`)
+-   Update the same to the Todo page if not get the readUserSession
+
+
+### Supabase database setup
+-   Create a table 
+-   
